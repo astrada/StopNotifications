@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Stop Notifications</string>
+    <string name="action_settings">Settings</string>
+    <string name="button_night">Night</string>
+    <string name="button_day">Day</string>
+    <string name="notifications_off">Notifications: off</string>
+    <string name="notifications_on">Notifications: on</string>
+    <string name="state_key">stop_notifications_state</string>
+    <string name="ok">OK</string>
+    <string name="dialog_title">Warning!</string>
+    <string name="mobile_data_connectivity_error">Error modifying mobile data connectivity</string>
+    <string name="wifi_error">Error modifying WiFi status</string>
+    <string name="led_error">Error modifying notification LED setting</string>
+</resources>

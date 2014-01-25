@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Stop Notifications</string>
+    <string name="action_settings">Impostazioni</string>
+    <string name="button_night">Notte</string>
+    <string name="button_day">Giorno</string>
+    <string name="notifications_off">Notifiche: disattive</string>
+    <string name="notifications_on">Notifiche: attive</string>
+    <string name="state_key">stop_notifications_state</string>
+    <string name="ok">OK</string>
+    <string name="dialog_title">Attenzione!</string>
+    <string name="mobile_data_connectivity_error">Errore durante la modifica dello stato della connettività mobile dati</string>
+    <string name="wifi_error">Errore durante la modifica dello stato della connettività WiFi</string>
+    <string name="led_error">Errore durante la modifica dello stato del LED di notifica</string>
+</resources>
