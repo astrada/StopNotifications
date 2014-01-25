@@ -1,22 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" >
 
-    <TextView
-        android:id="@+id/status_text"
-        android:layout_height="wrap_content"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:text="@string/notifications_on" />
-
-    <ToggleButton
-        android:id="@+id/toggle_button"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:textOn="@string/button_day"
-        android:textOff="@string/button_night"
-        android:drawableLeft="@drawable/night_time"
-        android:onClick="onToggleClicked" />
+    <fragment
+        android:id="@+id/main_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        class="org.tautologica.stopnotifications.MainFragment">
+    </fragment>
 
 </LinearLayout>
