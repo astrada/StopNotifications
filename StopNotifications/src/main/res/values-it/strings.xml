@@ -9,7 +9,14 @@
     <string name="state_key">stop_notifications_state</string>
     <string name="ok">OK</string>
     <string name="dialog_title">Attenzione!</string>
-    <string name="mobile_data_connectivity_error">Errore durante la modifica dello stato della connettività mobile dati</string>
+    <string name="mobile_data_connectivity_error">Errore durante la modifica dello stato della connettività 3G dati</string>
     <string name="wifi_error">Errore durante la modifica dello stato della connettività WiFi</string>
     <string name="led_error">Errore durante la modifica dello stato del LED di notifica</string>
+    <string name="pref_led">LED</string>
+    <string name="pref_led_summary">Spegne il LED di notifica</string>
+    <string name="pref_wifi">WiFi</string>
+    <string name="pref_wifi_summary">Spegne la connessione WiFi</string>
+    <string name="pref_mobile_data">3G</string>
+    <string name="pref_mobile_data_summary">Spegne la connessione dati 3G</string>
+    <string name="title_activity_settings">Impostazioni</string>
 </resources>

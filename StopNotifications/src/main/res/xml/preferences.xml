@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+        android:key="pref_led"
+        android:title="@string/pref_led"
+        android:summary="@string/pref_led_summary"
+        android:defaultValue="true" />
+    <CheckBoxPreference
+        android:key="pref_wifi"
+        android:title="@string/pref_wifi"
+        android:summary="@string/pref_wifi_summary"
+        android:defaultValue="true" />
+    <CheckBoxPreference
+        android:key="pref_mobile_data"
+        android:title="@string/pref_mobile_data"
+        android:summary="@string/pref_mobile_data_summary"
+        android:defaultValue="true" />
+</PreferenceScreen>

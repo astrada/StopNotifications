@@ -12,4 +12,11 @@
     <string name="mobile_data_connectivity_error">Error modifying mobile data connectivity</string>
     <string name="wifi_error">Error modifying WiFi status</string>
     <string name="led_error">Error modifying notification LED setting</string>
+    <string name="pref_led">Notification LED</string>
+    <string name="pref_led_summary">Turn off notification LED</string>
+    <string name="pref_wifi">WiFi</string>
+    <string name="pref_wifi_summary">Turn off WiFi connection</string>
+    <string name="pref_mobile_data">3G</string>
+    <string name="pref_mobile_data_summary">Turn off mobile data connection</string>
+    <string name="title_activity_settings">Settings</string>
 </resources>

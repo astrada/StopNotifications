@@ -1,6 +1,5 @@
 package org.tautologica.stopnotifications;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.content.Context;
@@ -9,6 +8,7 @@ import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,22 +33,26 @@ public class MainFragment extends Fragment {
 
     private void updateInterface(boolean notificationsEnabled) {
         ToggleButton toggleButton = (ToggleButton)getView().findViewById(R.id.toggle_button);
-        int drawableId = notificationsEnabled ? R.drawable.night_time : R.drawable.day_time;
+        int drawableId = notificationsEnabled ? R.drawable.ic_moon : R.drawable.ic_sun;
         // Switch icon
-        toggleButton.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(drawableId), null, null, null);
+        toggleButton.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(drawableId),
+                null, null, null);
         // Update status
         TextView textView = (TextView)getView().findViewById(R.id.status_text);
-        int statusTextId = notificationsEnabled ? R.string.notifications_on : R.string.notifications_off;
+        int statusTextId = notificationsEnabled ?
+                R.string.notifications_on :
+                R.string.notifications_off;
         textView.setText(getResources().getString(statusTextId));
     }
 
     private void toggleNotifications(boolean enabled) {
-        // Turn on/off notification LED
-        toggleNotificationLightPulse(enabled);
-        // Turn on/off WiFi
-        toggleWifi(enabled);
-        // Turn on/off Mobile Data Connection
-        toggleMobileDataConnectivity(enabled);
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        if (sharedPref.getBoolean(SettingsActivity.KEY_PREF_LED, true))
+            toggleNotificationLightPulse(enabled);
+        if (sharedPref.getBoolean(SettingsActivity.KEY_PREF_WIFI, true))
+            toggleWifi(enabled);
+        if (sharedPref.getBoolean(SettingsActivity.KEY_PREF_MOBILE_DATA, true))
+            toggleMobileDataConnectivity(enabled);
     }
 
     private void toggleNotificationLightPulse(boolean enabled) {
@@ -78,7 +82,8 @@ public class MainFragment extends Fragment {
             iConnectivityManagerField.setAccessible(true);
             Object iConnectivityManager = iConnectivityManagerField.get(connectivityManager);
             Class iConnectivityManagerClass =  Class.forName(iConnectivityManager.getClass().getName());
-            Method setMobileDataEnabledMethod = iConnectivityManagerClass.getDeclaredMethod("setMobileDataEnabled", Boolean.TYPE);
+            Method setMobileDataEnabledMethod =
+                    iConnectivityManagerClass.getDeclaredMethod("setMobileDataEnabled", Boolean.TYPE);
             setMobileDataEnabledMethod.setAccessible(true);
             setMobileDataEnabledMethod.invoke(iConnectivityManager, enabled);
         } catch (Exception e) {
