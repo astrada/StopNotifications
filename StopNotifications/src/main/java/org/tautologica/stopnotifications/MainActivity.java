@@ -3,7 +3,6 @@ package org.tautologica.stopnotifications;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Intent;
-import android.media.audiofx.BassBoost;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.Menu;
